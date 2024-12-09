@@ -2,9 +2,9 @@ version: '3.8'
 
 x-postgres-common:
   &postgres-common
-  image: postgres:14-alpine
+  image: postgres-rsync-ssh-docker-image
   user: postgres
-  restart: always
+  restart: no
   healthcheck:
     test: 'pg_isready -U user --dbname=postgres'
     interval: 10s
